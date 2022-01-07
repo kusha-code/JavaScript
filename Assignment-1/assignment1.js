@@ -16,13 +16,13 @@
 
 //passing a function as a parameter to another function
 
-function outerFunction(x) {
-    alert(x);
-}
-function innerFunction(func) {
-    func("Hello User!")
-}
-innerFunction(outerFunction)
+// function outerFunction(x) {
+//     alert(x);
+// }
+// function innerFunction(func) {
+//     func("Hello User!")
+// }
+// innerFunction(outerFunction)
 
 // Q2 -> Arrow Function
 
@@ -35,8 +35,8 @@ innerFunction(outerFunction)
 
 
 
-const firstLettersUsingArrow = (firstName, lastName)=>{
-    let output =  firstName.charAt(0) + lastName.charAt(0);
-    return output
-}
-console.log(firstLettersUsingArrow("Dexter", "Kush"));
+// const firstLettersUsingArrow = (firstName, lastName)=>{
+//     let output =  firstName.charAt(0) + lastName.charAt(0);
+//     return output
+// }
+// console.log(firstLettersUsingArrow("Dexter", "Kush"));

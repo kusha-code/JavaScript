@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div style="display: inline-block;">
+  <h2 style="background-color: rgb(255, 187, 0); display: inline;">Local Storage</h2>
+  <p id="p1"></p>
+  <h2 style="background-color: rgb(255, 196, 0); display: inline;">Session Storage</h2>
+  <p id="p2"></p>
+  <button style="background-color: rgba(125, 21, 211, 0.205); color:black;">Click</button>
+</div>
+  <script>
+    sessionStorage.setItem('key', 0);
+
+    const element1 = document.getElementById('p1');
+    const element2 = document.getElementById('p2');
+
+    let localNumber = localStorage.getItem('key');
+    if(!localNumber){  //Testing whether storage has been populated
+
+      localStorage.setItem('key', 0);
+    }
+      
+    element1.innerText = localStorage.getItem('key'); //getting values from storage
+    element2.innerText = sessionStorage.getItem('key');
+    const button = document.querySelector('button'); //Responding to storage changes with the StorageEvent
+
+    button.addEventListener('click', (event) => {
+      localNumber = localStorage.getItem('key');
+
+      let sessionNumber = sessionStorage.getItem('key');
+      localStorage.setItem('key', Number.parseInt(localNumber) + 1);
+      sessionStorage.setItem('key', Number.parseInt(sessionNumber) + 1);
+      element1.innerText =  localStorage.getItem('key');
+      element2.innerText =  sessionStorage.getItem('key');
+    });
+  </script>
+</body>
+</html>
